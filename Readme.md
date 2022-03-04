@@ -1,23 +1,30 @@
-Example project how to use gRPC, Conan and CMake
+Example Client/Server project showing how to use gRPC, Conan and CMake
 
-# C++ side
+# Build C++ project
+
+## Prerequisites 
+
+* [Conan](https://conan.io/) (tested with 1.45.0)
+* [Cmake](https://cmake.org/) (tested with 3.20 - the one shipped with MSVC 2019)
+* Working build tools (tested with MSVC 2019)
+
 ```
 cmake -S . -B build
 cmake --build build --parallel 12 --config Release
-./build/src/Release/main.exe
 ```
 
-# Python side
+# Run server
 ```
-python -m venv .venv
-. .venv/Scripts/activate
-python -m pip install -r requirements.txt
-python src/client.py
+./build/bin/server
 ```
 
-# Docker
+# Run client
+```
+./build/bin/client
+```
 
+# Docker server
 ```
 docker build -t grpctest .
-docker run --rm -it -p 50051:50051 grpctest build/bin/main
+docker run --rm -it -p 50051:50051 grpctest build/bin/server
 ```
