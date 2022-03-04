@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message Data {
-    string msg = 1;
-}
-
-service NiceService {
-    rpc SendMessage(Data) returns (Data) {}
-}

@@ -1,6 +1,6 @@
 [requires]
-    protobuf/3.17.1
-    grpc/1.39.1
+    protobuf/3.19.2@
+    grpc/1.44.0@
 
 [generators]
     cmake_find_package
